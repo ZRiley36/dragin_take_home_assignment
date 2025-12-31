@@ -28,13 +28,13 @@ logs:
 
 # Create venv and install dependencies
 install:
-	python3 -m venv venv
-	./venv/bin/pip install -r requirements.txt
-	@echo "Virtual environment created. Activate with: source venv/bin/activate"
+	python -m venv venv
+	.\venv\Scripts\pip install -r requirements.txt
+	@echo "Virtual environment created. Activate with: source venv\Scripts\activate"
 
 # Run the app locally
 run-app:
-	./venv/bin/uvicorn src.main:app --reload --port 8000
+	.\venv\Scripts\uvicorn src.main:app --reload --port 8000
 
 # Clean up
 clean:

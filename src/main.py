@@ -3,9 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from .database import init_db
-
-# TODO: Import your routers here
-# from .routes import payments
+from .routes import payments
 
 
 @asynccontextmanager
@@ -30,5 +28,5 @@ def health_check():
     return {"status": "healthy"}
 
 
-# TODO: Include your payment routes
-# app.include_router(payments.router, prefix="/payments", tags=["payments"])
+# Include payment routes
+app.include_router(payments.router, prefix="/payments", tags=["payments"])
